@@ -27,7 +27,7 @@ Precisely on your structure, the research quality, ergonomics, user interaction 
 Your code must be clean, go along with React/Redux standards (e.g [AirBnB style guide](https://github.com/airbnb/javascript/tree/master/react)), have clear variable names and be commented.
 
 To push your result, just add a new branch in this repository with
-[FIRSTNAME]_[LASTNAME] and do a pull request.
+*[FIRSTNAME]_[LASTNAME]* and do a pull request.
 
 
 Good luck ;)

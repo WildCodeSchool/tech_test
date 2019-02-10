@@ -1,0 +1,34 @@
+{
+			"name": "Tech-test-wild-code-school",
+			"version": "1.0.0",
+			"main": "index.js",
+			"author": "François Van Eesbeeck",
+			"scripts": {
+						"start": "webpack-dev-server --hot --inline --config webpack.dev.js",
+						"build": "webpack --config webpack.prod.js"
+			},
+			"dependencies": {
+						"axios": "^0.18.0",
+						"babel-preset-env": "^1.7.0",
+						"history": "^4.7.2",
+						"package.json": "^2.0.1",
+						"path": "^0.12.7",
+						"react": "^15.6.1",
+						"react-async-script-loader": "^0.3.0",
+						"react-dom": "^15.6.1",
+						"react-modal": "^2.3.2",
+						"react-router-dom": "^4.3.1",
+						"redux": "^4.0.1"
+			},
+			"devDependencies": {
+						"babel-core": "^6.26.0",
+						"babel-loader": "^7.1.2",
+						"babel-preset-react": "^6.24.1",
+						"html-webpack-plugin": "^2.30.1",
+						"react-hot-loader": "^1.3.1",
+						"uglifyjs-webpack-plugin": "^0.4.6",
+						"webpack": "^3.8.1",
+						"webpack-dev-server": "^2.7.1",
+						"webpack-merge": "^4.1.0"
+			}
+}

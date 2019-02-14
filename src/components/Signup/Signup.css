@@ -1,0 +1,11 @@
+#signup-page {
+    margin-top: 4rem;
+}
+
+#signup-page h2 {
+    padding: 1rem 0.5rem;
+}
+
+#signup-page .ui.labeled {
+    margin: 0.1rem 0;
+}

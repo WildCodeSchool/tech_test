@@ -1,22 +1,39 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import Nav from "../Nav/Nav";
 import Main from "../Main/Main";
+import "./App.css";
+import { Message } from "semantic-ui-react";
 
-export function App({ emails }) {
-    return (
-        <div className="blog-client">
-            <aside>
-                <Nav />
-            </aside>
+export class App extends Component {
+    render() {
+        const { user, errors } = this.props;
+        return (
+            <div id="app">
+                <nav>
+                    <Nav user={user} />
+                </nav>
 
-            <main>
-                <Main emails={emails} />
-            </main>
-        </div>
-    );
+                <main>
+                    <Main />
+                </main>
+                {errors.show ? (
+                    <Message
+                        header="An error occured"
+                        contents={errors.message}
+                    />
+                ) : null}
+            </div>
+        );
+    }
 }
 
-export default connect(state => ({
-    emails: state.emails
-}))(App);
+const mapStateToProps = state => ({
+    user: state.users.user,
+    errors: state.errors
+});
+
+export default connect(
+    mapStateToProps,
+    null
+)(App);

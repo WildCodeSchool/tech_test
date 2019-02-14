@@ -5,13 +5,12 @@ import routes from "./routes";
 export default function configureRouter() {
     const router = createRouter(routes, {
         defaultRoute: "home"
-    })
-        // Plugins
-        .usePlugin(
-            browserPlugin({
-                useHash: true
-            })
-        );
-
+    });
+    // Plugins
+    router.usePlugin(
+        browserPlugin({
+            useHash: true
+        })
+    );
     return router;
 }

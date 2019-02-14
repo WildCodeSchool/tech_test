@@ -8,8 +8,8 @@ import configureStore from "./redux/create-store";
 import "./index.css";
 import "semantic-ui-css/semantic.min.css";
 
-const router = createRouter();
-const store = configureStore(router);
+export const router = createRouter();
+export const store = configureStore(router);
 const wrappedApp = (
     <Provider store={store}>
         <RouterProvider router={router}>

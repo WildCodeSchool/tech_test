@@ -1,0 +1,11 @@
+#login-page {
+    margin-top: 4rem;
+}
+
+#login-page h2 {
+    padding: 1rem 0.5rem;
+}
+
+#login-page .ui.labeled {
+    margin: 0.1rem 0;
+}

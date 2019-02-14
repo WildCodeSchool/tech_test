@@ -1,3 +1,10 @@
+import {
+    LOAD_POSTS,
+    REMOVE_POST,
+    LOAD_SINGLE_POST,
+    ADD_POST
+} from "../constants";
+
 const postsInitialState = {
     posts: [],
     post: null
@@ -5,16 +12,27 @@ const postsInitialState = {
 
 export function posts(state = postsInitialState, action) {
     switch (action.type) {
-        case "UPDATE_TITLE":
+        case LOAD_POSTS:
             return {
                 ...state,
-                title: action.title
+                posts: action.payload
             };
 
-        case "UPDATE_MESSAGE":
+        case REMOVE_POST:
             return {
                 ...state,
-                message: action.message
+                posts: state.posts.filter(post => post.id !== action.payload)
+            };
+        case LOAD_SINGLE_POST:
+            return {
+                ...state,
+                post: action.payload
+            };
+
+        case ADD_POST:
+            return {
+                ...state,
+                posts: [...state.posts, action.payload]
             };
 
         default:

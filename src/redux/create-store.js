@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { router5Middleware, router5Reducer } from "redux-router5";
-import { posts, comments, users } from "./reducers";
+import { posts, comments, users, errors } from "./reducers";
 import { createLogger } from "redux-logger";
 
 export default function configureStore(router, initialState = {}) {
@@ -14,7 +14,8 @@ export default function configureStore(router, initialState = {}) {
             router: router5Reducer,
             posts,
             comments,
-            users
+            users,
+            errors
         }),
         initialState
     );

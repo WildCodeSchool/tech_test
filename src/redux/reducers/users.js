@@ -1,19 +1,21 @@
+import { LOAD_USER, REMOVE_USER } from "../constants";
+
 const usersInitialState = {
     user: null
 };
 
 export function users(state = usersInitialState, action) {
     switch (action.type) {
-        case "UPDATE_TITLE":
+        case LOAD_USER:
             return {
                 ...state,
-                title: action.title
+                user: action.payload
             };
 
-        case "UPDATE_MESSAGE":
+        case REMOVE_USER:
             return {
                 ...state,
-                message: action.message
+                user: null
             };
 
         default:

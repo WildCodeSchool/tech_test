@@ -1,27 +1,60 @@
 import React from "react";
 import { connect } from "react-redux";
-import { BaseLink } from "react-router5";
+import { Link } from "react-router5";
+import { Button, Icon } from "semantic-ui-react";
+import "./Nav.css";
+import { removeUser } from "../../redux/actions/user.actions";
 
-function Nav(props) {
-    const { router } = props;
-
+function Nav({ router, user, logout }) {
     return (
-        <nav>
-            <BaseLink
-                router={router}
-                routeName="home"
-                routeOptions={{ reload: true }}
-            >
-                Inbox
-            </BaseLink>
-            <BaseLink router={router} routeName="posts">
-                Compose
-            </BaseLink>
-            <BaseLink router={router} routeName="contacts">
-                Contacts
-            </BaseLink>
-        </nav>
+        <Button.Group>
+            <Button>
+                <Link
+                    router={router}
+                    routeName="home"
+                    routeOptions={{ reload: true }}
+                >
+                    Home
+                </Link>
+            </Button>
+            <Button>
+                <Link router={router} routeName="posts">
+                    Posts
+                </Link>
+            </Button>
+            {user ? (
+                <Button icon onClick={logout}>
+                    <Icon name="sign out" />
+                </Button>
+            ) : (
+                <>
+                    <Link router={router} routeName="login">
+                        <Button icon>
+                            <Icon name="sign in" />
+                        </Button>
+                    </Link>
+                    <Link router={router} routeName="register">
+                        <Button icon>
+                            <Icon name="add user" />
+                        </Button>
+                    </Link>
+                </>
+            )}
+        </Button.Group>
     );
 }
 
-export default connect(state => state.router.route)(Nav);
+const mapStateToProps = state => ({
+    route: state.router.route,
+    user: state.users.user
+});
+
+const mapDispatchToProps = dispatch => ({
+    logout() {
+        dispatch(removeUser());
+    }
+});
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Nav);

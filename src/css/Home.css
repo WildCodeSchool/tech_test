@@ -1,0 +1,305 @@
+/*global*/
+#root,html,body{
+	height: 100%;
+}
+.blogContainer {
+	width: 100%;
+	min-height: calc(100% - 8em);
+	padding: 0 0 8em 0;
+	position: relative;
+}
+
+/* header */
+.blogHeader,.blogFooter{
+	padding: .3% 5%;
+	border-bottom: 1px dashed #000;
+	margin: 0 0 1% 0;
+}
+.lienLogo{
+	width: 10%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.logo{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.menuBurger{
+	display: none;
+}
+.navMenu{
+	display: inline-block;
+	width: 90%;
+	text-align: right;
+	vertical-align: middle;
+}
+.lienMenu{
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0.9em;
+	padding: 1em 2em;
+	border: 1px dotted #000;
+	margin: 0 1%;
+}
+.lienMenu:hover,.lienMenu.actif{
+	border-color: #ccc;
+}
+.formSearch{
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 .5em;
+	border: 1px dotted #000;
+	margin: 0 3.5% 0 1%;
+}
+.champSearch{
+	border: none;
+	background: none;
+	font-size: 1em;
+	box-sizing: border-box;
+	padding: .85em 0;
+}
+.boutonFormSearch{
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 1.1em;
+}
+
+/* footer */
+.blogFooter{
+	border-top: 1px dashed #000;
+	border-bottom: none;
+	background: #ccc;
+	margin: 0;
+	text-align: center;
+	padding: .5% 8%;
+	position: absolute;
+	left: 0; bottom: 0; right: 0;
+}
+.adrFooter{
+	font-style: normal;
+	width: 35%;
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+}
+.infoBlog{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	width: 65%;
+	text-align: right;
+}
+
+/* liste articles page d'accueil*/
+.listeArticle{
+	width: 90%;
+	margin: 1% auto;
+	list-style: none;
+	padding: 0;
+}
+.liArticle{
+	width: 44%;
+	margin: 3%;
+	display: inline-block;
+	background: #ccc;
+	box-sizing: border-box;
+	border: 1px dotted #000;
+}
+.figListeArticle{
+	padding: 0;
+	margin: 0;
+}
+.imgListeArticle{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.liArticle h1,.liArticle p{
+	padding: 0 2%;
+}
+.lienListeArticle{
+	display: block;
+	margin: 2% auto;
+	width: 60%;
+	text-decoration: none;
+	color: #000;
+	padding: .5em 1em;
+	border: 1px dotted #000;
+	background: #eee;
+	text-align: center;
+}
+.footerListeArticles{
+	background: #333;
+	padding: 1% 2%;
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+}
+
+/* page détail article */
+.articleDetailArticle{
+	width: 85%;
+	margin: 1% auto;
+	text-align: justify;
+}
+.figDetailArticle{
+	padding: 0;
+	margin: 0 1% 1% 0;
+	float: left;
+	width: 25%;
+}
+.footerArticle{
+	border-top: 1px dashed #000;
+	margin: 1% 0 0 0;
+	padding: 1% 0 0 0;
+	display: flex;
+	justify-content: space-between;
+}
+.listeCommentaires{
+	padding: 0;
+	margin: 2% auto;
+	width: 80%;
+	list-style: none;
+}
+.liCommentaire{
+	border: 1px dotted #000;
+	margin: 2% 0;
+}
+.headerCommentaire{
+	display: flex;
+	justify-content: space-between;
+	background: #333;
+	color: #fff;
+	padding: 1% 2%;
+}
+.liCommentaire p{
+	padding: 0 2%;
+}
+.formCommentaire{
+	width: 80%;
+	margin: 2% auto;
+	border: 1px dotted #000;
+	padding: 1% 2%;
+	background: #333;
+	color: #fff;
+	box-sizing: border-box;
+}
+.labelCommentaire,.labelContact{
+	display: inline-block;
+	vertical-align: middle;
+	width: 20%;
+}
+.champCommentaire,.champContact{
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	padding: 1%;
+	border: none;
+	background: #ccc;
+	width: 80%;
+	margin: 1% 0;
+}
+textarea.champCommentaire,textarea.champContact{
+	height: 8em;
+	resize: none;
+}
+.boutonFormCommentaire,.boutonContact{
+	display: block;
+	margin: 1% auto;
+	cursor: pointer;
+	border: none;
+	background: #ccc;
+	padding: 1% 2%;
+	font-size: 1em;
+}
+
+/* page contact */
+.formContact{
+	width: 60%;
+	margin: auto;
+	border: 1px dotted #000;
+	padding: 0 2% 1% 2%;
+	background: #ccc;
+}
+.formContact p{
+	text-align: center;
+}
+.labelContact{
+	width: 25%;
+}
+.champContact{
+	width: 75%;
+	background: #fff;
+}
+.boutonContact{
+	background: #fff;
+}
+
+/* modification des styles pour les écrans inférieurs à 850px de large */
+@media only screen and (max-width: 850px){
+	.blogContainer {
+		min-height: calc(100% - 12em);
+		padding: 0 0 12em 0;
+	}
+	.lienLogo{
+		vertical-align: top;
+	}
+	.navMenu{
+		max-height: 0;
+		width: 100%;
+		overflow: hidden;
+		vertical-align: top;
+	}
+	.menuBurger.ouvert + .navMenu{
+		max-height: 800px;
+	}
+	.lienMenu,.formSearch{
+		display: block;
+		margin: 0 1%;
+	}
+	.menuBurger{
+		display: inline-block;
+		vertical-align: middle;
+		color: #000;
+		width: 90%;
+		text-align: right;
+		box-sizing: border-box;
+		padding: 1em 4%;
+		font-size: 1em;
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+	.liArticle{
+		width: 100%;
+		margin: 3% 0;
+	}
+	.adrFooter{
+		width: 100%;
+		text-align: center;
+	}
+	.infoBlog{
+		margin: 2% 0;
+		width: 100%;
+		text-align: center;
+	}
+	.formContact,.listeCommentaires,.formCommentaire{
+		width: 100%;
+	}
+	.labelCommentaire,.labelContact{
+		display: block;
+		width: 100%;
+	}
+	.champCommentaire,.champContact{
+		display: block;
+		width: 100%;
+		margin: .5% 0 2% 0;
+	}
+	.figDetailArticle{
+		width: 35%;
+	}
+}
